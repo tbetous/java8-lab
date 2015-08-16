@@ -60,3 +60,10 @@ local.properties
 
 # Spring project
 **/.springBeans
+
+######################
+# IntelliJ
+######################
+.idea/
+*.iml
+*.iws
