@@ -4,7 +4,7 @@ import com.tbetous.javalab.people.data.Person;
 import com.tbetous.javalab.people.factory.PersonFactory;
 import com.tbetous.javalab.people.parser.CsvPersonParser;
 
-public class App {
+public class MainApp1 {
     public static void main(String[] args) {
         final String DATA_FILE_SEPARATOR = ",";
         final String FAKE_CSV_LINE = "Jean,Dupont,M";
@@ -19,7 +19,7 @@ public class App {
         // Use new functionnal interface
         person = csvParser.parseLine(FAKE_CSV_LINE, DATA_FILE_SEPARATOR, PersonFactory::create);
         System.out.println("TriFunction style : " + person.getFirstName() + " " + person.getLastName() + " " + person.getGender());
-        
+
         // Use lambda style
         person = csvParser.parseLine(FAKE_CSV_LINE, DATA_FILE_SEPARATOR, (a,b,c) -> PersonFactory.create(a, b, c));
         System.out.println("Lambda style : " + person.getFirstName() + " " + person.getLastName() + " " + person.getGender());
